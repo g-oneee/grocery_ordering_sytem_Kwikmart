@@ -1,0 +1,35 @@
+{% extends 'seller/base.html' %}
+{% block title %} Orders List{% endblock %}
+
+{% block content %}
+{% include 'seller/topside.html' %}
+
+
+<div class="row my-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <table class="table bg-white">
+            <thead class="bg-warning text-secondary">
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">total</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Odered by</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in order %}
+                <tr>
+                    <td>{{ order.product }}</td>
+                    <td>{{ order.total }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.user }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
+
